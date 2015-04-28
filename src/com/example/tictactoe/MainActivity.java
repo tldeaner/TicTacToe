@@ -42,10 +42,9 @@ public class MainActivity extends Activity {
         public void onClick(View v) {
         	
         	String label = " ";
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
+        	TextView output = (TextView)findViewById(R.id.textView1);
+			output.setText(" ");
+
             turn = false;
         	
             for(int i=0; i<9; i++){
@@ -64,10 +63,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            //StringBuilder sb = new StringBuilder();
-            //sb.append( label .substring(0,1) );
-            //sb.append( label .substring(1).toLowerCase() );
-            //label = sb.toString();
         	
         	buttons[0].setText(label);
         	buttons[0].setEnabled(false);
@@ -92,12 +87,7 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-        	/*
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
-        	*/
+
         	buttons[1].setText(label);
         	buttons[1].setEnabled(false);
         	turn=true;
@@ -121,12 +111,7 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-        	/*
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
-        	*/
+
         	buttons[2].setText(label);
         	buttons[2].setEnabled(false);
         	turn=true;
@@ -150,10 +135,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
         	
         	buttons[3].setText(label);
         	buttons[3].setEnabled(false);
@@ -178,10 +159,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
         	
         	buttons[4].setText(label);
         	buttons[4].setEnabled(false);
@@ -206,10 +183,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
         	
         	buttons[5].setText(label);
         	buttons[5].setEnabled(false);
@@ -234,10 +207,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
         	
         	buttons[6].setText(label);
         	buttons[6].setEnabled(false);
@@ -262,10 +231,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            //StringBuilder sb = new StringBuilder();
-            //sb.append( label .substring(0,1) );
-            //sb.append( label .substring(1).toLowerCase() );
-            //label = sb.toString();
         	
         	buttons[7].setText(label);
         	buttons[7].setEnabled(false);
@@ -289,10 +254,6 @@ public class MainActivity extends Activity {
         	if(turn == false){
         	
         	String label = "X";
-            StringBuilder sb = new StringBuilder();
-            sb.append( label .substring(0,1) );
-            sb.append( label .substring(1).toLowerCase() );
-            label = sb.toString();
         	
         	buttons[8].setText(label);
         	buttons[8].setEnabled(false);
@@ -308,6 +269,7 @@ public class MainActivity extends Activity {
         	}
         
         	checkWinner();
+        	
         	
         }
     });
@@ -337,28 +299,120 @@ public class MainActivity extends Activity {
 			}
 			
 			
+			
 		}
 		else if(buttons[3].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[5].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[3].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
 			
 		}
 		else if(buttons[6].getText().equals(buttons[7].getText()) && buttons[7].getText().equals(buttons[8].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[6].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
 
 		}
 		else if(buttons[0].getText().equals(buttons[3].getText()) && buttons[3].getText().equals(buttons[6].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[0].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
 
 		}
 		else if(buttons[1].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[7].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[1].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
 			
 		}
 		else if(buttons[2].getText().equals(buttons[5].getText()) && buttons[5].getText().equals(buttons[8].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[2].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
 			
 		}
 		else if(buttons[0].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[8].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[0].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
 			
 		}
 		else if(buttons[2].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[6].getText())){
+			TextView output = (TextView)findViewById(R.id.textView1);
+			String a = (String) buttons[2].getText();
+			
+			if(a=="X") {
+				a = "Player 1 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
+			if(a=="O"){
+				a = "Player 2 Wins!";
+				output.setText(String.valueOf(a));
+			}
+			
 			
 		}
+		
 		
 		
 	}
